@@ -1,0 +1,33 @@
+{
+    "menu": {
+        "signupLoginButton": "a[href='/login']",
+        "logOutButton": "a[href='/logout']",
+        "accountDeleteButton": "a[href='/delete_account']"
+    },
+    "cookies": {
+        "acceptCookiesButton": "xpath=//button[@aria-label='Consent']"
+    },
+    "signup": {
+        "newUserSignupTitle": "h2:has-text('New User Signup!')",
+        "nameField": "input[data-qa='signup-name']",
+        "emailField": "input[data-qa='signup-email']",
+        "signupButton": "button[data-qa='signup-button']",
+        "enterAccountInfoTitle": "h2:has-text('Enter Account Information')",
+        "title_mr": "input[id='id_gender1']",
+        "title_mrs": "input[id='id_gender2']",
+        "passwordField": "xpath=//input[@id='password']",
+        "dayDropdown": "select[id='days']",
+        "monthDropdown": "select[id='months']", 
+        "yearDropdown": "select[id='years']",
+        "firstNameField": "xpath=//input[@data-qa='first_name']",
+        "lastNameField": "xpath=//input[@data-qa='last_name']",
+        "addressField": "xpath=//input[@data-qa='address']",
+        "countryDropdown": "xpath=//select[@data-qa='country']",
+        "stateField": "xpath=//input[@data-qa='state']",
+        "cityField": "xpath=//input[@data-qa='city']",
+        "zipcodeField": "xpath=//input[@data-qa='zipcode']",
+        "phoneField": "xpath=//input[@data-qa='mobile_number']",
+        "createAccountButton": "xpath=//button[@data-qa='create-account']",
+        "continueButton_afterSignup": "xpath=//a[@data-qa='continue-button']"
+    }
+}

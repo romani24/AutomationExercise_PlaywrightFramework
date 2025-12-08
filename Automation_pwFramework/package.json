@@ -1,0 +1,39 @@
+{
+  "name": "automation_pwframework",
+  "version": "1.0.0",
+  "description": "Framework de testes E2E com Playwright e Cucumber",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:smoke": "cucumber-js --tags @smoke",
+    "test:regression": "cucumber-js --tags @regression",
+    "test:headed": "set HEADLESS=false && cucumber-js",
+    "test:podman": "podman build -t playwright-tests . && podman run --rm playwright-tests",
+    "test:docker": "docker build -t playwright-tests . && docker run --rm playwright-tests",
+    "report": "node generate-report.js",
+    "allure:generate": "allure generate allure-results -o allure-report --clean",
+    "allure:open": "allure open allure-report",
+    "allure": "npm test && npm run allure:generate && npm run allure:open",
+    "clean": "rimraf test-results allure-results allure-report",
+    "lint": "eslint src/**/*.ts"
+  },
+  "keywords": [
+    "playwright",
+    "cucumber",
+    "e2e",
+    "automation",
+    "testing"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.2.0",
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.1",
+    "allure-cucumberjs": "^3.4.3",
+    "dotenv": "^17.2.3",
+    "multiple-cucumber-html-reporter": "^3.9.3",
+    "ts-node": "^10.9.2"
+  }
+}

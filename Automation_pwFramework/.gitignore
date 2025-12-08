@@ -1,0 +1,27 @@
+# Dependências
+node_modules/
+
+# Resultados de testes
+test-results/
+playwright-report/
+allure-results/
+allure-report/
+
+# Ambiente
+.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Build
+dist/
+build/
