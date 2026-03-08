@@ -1,5 +1,6 @@
 import { Given, When, Then } from '@cucumber/cucumber';
 import { pageFixture } from '../../hooks/pageFixture';
+import { logger } from '../../utils/logger';
 import * as locators from '../page_objects/automationExercisePage.json';
 
 // Helper to get locator by path (e.g.: "login.usernameInput")
@@ -32,7 +33,7 @@ When('I click {string} if visible', async function (selector: string) {
     await pageFixture.page.waitForSelector(locator, { timeout: 5000, state: 'visible' });
     await pageFixture.page.click(locator);
   } catch (error) {
-    console.log(`Element ${selector} not found, continuing...`);
+    logger.warn(`Element ${selector} not found, continuing...`);
   }
 });
 

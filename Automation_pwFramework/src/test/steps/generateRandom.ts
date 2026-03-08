@@ -1,5 +1,6 @@
 import { When } from '@cucumber/cucumber';
 import { pageFixture } from '../../hooks/pageFixture';
+import { logger } from '../../utils/logger';
 import * as locators from '../page_objects/automationExercisePage.json';
 import { generateUniqueEmail, generateRandomText, generatePhoneNumber } from '../../utils/helpers';
 
@@ -27,7 +28,7 @@ When('I fill unique email in {string}', async function (selector: string) {
   generatedData['email'] = email;
   await pageFixture.page.waitForSelector(locator, { timeout: 10000 });
   await pageFixture.page.fill(locator, email);
-  console.log(`Generated email: ${email}`);
+  logger.data('Generated email', email);
 });
 
 // Step to fill with random text
